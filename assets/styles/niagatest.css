@@ -1,0 +1,167 @@
+@font-face {
+  font-family: montserrat;
+  src: url(fonts/montserrat/Montserrat-Regular.otf);
+}
+
+@font-face {
+  font-family: montserrat-bold;
+  src: url(fonts/montserrat/Montserrat-Bold.otf);
+}
+
+@font-face {
+  font-family: montserrat-light;
+  src: url(fonts/montserrat/Montserrat-Light.otf);
+}
+
+@font-face {
+  font-family: robotto-regular;
+  src: url(fonts/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: robotto-thin;
+  src: url(fonts/roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: robotto-light;
+  src: url(fonts/roboto/Roboto-Light.ttf);
+}
+
+body {
+  font-family: montserrat;
+  color: #474443;
+}
+
+p,
+.complete-module__list{
+  font-size: 14px;
+}
+
+.nt-nav{
+  background-color: #FFFFFF;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.nt-nav__logo{
+  width: 13rem;
+}
+
+.nt-nav__list {
+  font-family: montserrat-light;
+}
+
+.nt-nav__list li {
+  margin-left: .5rem;
+}
+
+.php-hosting {
+  padding-top: 120px;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.php-hosting__title,
+.hosting-package__title,
+.hosting-features__card-title{
+  font-family: montserrat-bold;
+}
+
+.php-hosting__subtitle,
+.hosting-package__subtitle,
+.php-limit__title,
+.hosting-features__title,
+.hosting-features__card-text,
+.support-laravel__title,
+.support-laravel__text,
+.complete-module__list,
+.complete-module__title,
+.stable-hosting__title{
+  font-family: montserrat-light;
+}
+
+.php-hosting__list,
+.support-laravel__list {
+  font-family: montserrat-light;
+  padding-left: 0;
+  list-style: none;
+  line-height: 2.5rem;
+}
+
+.php-hosting__list-item,
+.php-limit__list-item{
+  display: flex;
+}
+
+.php-hosting__list-item::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f058';
+  color: #28a745;
+  padding-right: .5rem;
+  font-size: 18px;
+}
+
+.php-limit__list{
+  text-align: center;
+}
+
+.php-limit__list-item::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f058';
+  color: #28a745;
+  padding-right: 1rem;
+  font-size: 18px;
+}
+
+.php-limit::after,
+.hosting-features::after{
+  content: ' ';
+  border: 3px solid #f2f2f2;
+  width: 6rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.hosting-features__card-img{
+  width: 4rem;
+}
+
+.support-laravel__text{
+  font-size: 16px !important;
+  letter-spacing: .375px;
+}
+
+.support-laravel{
+  border-bottom: 1px solid #f2f2f2; 
+}
+
+.support-laravel__list{
+  font-size: 15px;
+}
+
+.support-laravel__list-item::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f058';
+  color: #28a745;
+  padding-right: .5rem;
+  font-size: 15px;
+}
+
+.complete-module__list{
+  list-style: none;
+}
+
+.stable-hosting__text{
+  font-size: 16px;
+  font-family: robotto-light;
+}
+
+.btn--pill.btn-lg{
+  border-radius: 1.5rem !important;
+}
