@@ -28,14 +28,36 @@
   src: url(fonts/roboto/Roboto-Light.ttf);
 }
 
+@font-face {
+  font-family: nunito-sans;
+  src: url(fonts/nunito_sans/NunitoSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: nunito-sans-bold;
+  src: url(fonts/nunito_sans/NunitoSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: nunito-sans-light;
+  src: url(fonts/nunito_sans/NunitoSans-Light.ttf);
+}
+
 body {
-  font-family: montserrat;
+  font-family: montserrat, sans-serif;
   color: #474443;
+  font-weight: 400;
+  background: #FFFFFF;
 }
 
 p,
 .complete-module__list{
   font-size: 14px;
+}
+
+a, a:hover{
+  text-decoration: none;
+  outline: 0;
 }
 
 .nt-nav{
@@ -49,7 +71,7 @@ p,
 }
 
 .nt-nav__list {
-  font-family: montserrat-light;
+  font-family: montserrat-light, sans-serif;
 }
 
 .nt-nav__list li {
@@ -64,8 +86,9 @@ p,
 
 .php-hosting__title,
 .hosting-package__title,
-.hosting-features__card-title{
-  font-family: montserrat-bold;
+.hosting-features__card-title,
+.ft--strong{
+  font-family: montserrat-bold, sans-serif;
 }
 
 .php-hosting__subtitle,
@@ -77,13 +100,14 @@ p,
 .support-laravel__text,
 .complete-module__list,
 .complete-module__title,
-.stable-hosting__title{
-  font-family: montserrat-light;
+.stable-hosting__title,
+.need-help__title{
+  font-family: montserrat-light, sans-serif;
 }
 
 .php-hosting__list,
 .support-laravel__list {
-  font-family: montserrat-light;
+  font-family: montserrat-light, sans-serif;
   padding-left: 0;
   list-style: none;
   line-height: 2.5rem;
@@ -159,9 +183,164 @@ p,
 
 .stable-hosting__text{
   font-size: 16px;
-  font-family: robotto-light;
+  font-family: robotto-light, sans-serif;
+}
+
+.share{
+  background-color: #f2f2f2;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+}
+
+.share__social-media-icon{
+  font-size: 34px;
+}
+
+.share__social-media-icon.fa-facebook-square{
+  color: #3B5598;
+}
+.share__social-media-icon.fa-twitter-square{
+  color: #00aced;
+}
+.share__social-media-icon.fa-google-plus-square{
+  color: #DB4437;
+}
+
+.share__social-media-arrow{
+  top: 16px;
+}
+.share__social-media-arrow::before{
+  border-width: .5rem .5rem .5rem 0;
+  border-right-color: rgba(0,0,0,.25);
+  /* position: absolute; */
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  left: 0;
+}
+
+.share__social-media-arrow::after{
+  left: 1px;
+  border-width: .5rem .5rem .5rem 0;
+  border-right-color: rgba(0,0,0,.25);
+  /* position: absolute; */
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+}
+
+.share__social-media-body{
+  border: 1px solid rgba(0,0,0,.25);
+  width: 4rem;
+  border-radius: .25rem;
+  padding: .25rem .75rem;
+  color: #808080;
+}
+
+.need-help__title{
+  letter-spacing: .4px;
+}
+
+.need-help__separate{
+  border-left: 1px solid #FFFFFF;
+  height: 4rem;
+  margin-left: 6rem;
+  opacity: 0.3;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .btn--pill.btn-lg{
+  border-width: 2px;
   border-radius: 1.5rem !important;
+}
+
+.nt-footer{
+  background-color: #333;
+  padding: 100px 5% 24px;
+  color: #c4c4c4;
+  font-family: nunito_sans, sans-serif;
+}
+
+.nt-footer__title{
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: robotto-bold, sans-serif;
+}
+
+.nt-footer__contact,
+.nt-footer__address{
+  font-size: 13px;
+  line-height: 2.02;
+}
+
+.nt-footer__contact > a{
+  color: #FFFFFF;
+}
+
+.nt-footer__menu-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nt-footer__menu{
+  color: #FFFFFF !important;
+  transition: color .8s;
+  font-family: robotto-light, sans-serif;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.nt-footer__menu:hover{
+  color: #c4c4c4;
+}
+
+.input-group--custom{
+  border-radius: 1.5rem;
+  background: #FFF;
+  padding: .2rem;
+}
+
+.form-control--custom{
+  border: none;
+  background: none !important;
+}
+
+.form-control--custom:focus,
+.btn--custom-input:focus{
+  box-shadow: none !important;
+}
+
+.btn--custom-input{
+  border-radius: 1.5rem !important;
+  font-size: 16px !important;
+  padding: .5rem .5rem !important;
+}
+
+.nt-footer__get-promo{
+  opacity: 0.7;
+}
+
+.nt-footer__social-media{
+  border: 2px solid #FFF;
+  font-size: 18px;
+  /* padding: 10px 18px; */
+  border-radius: 25px;
+  height: 50px;
+}
+
+.nt-footer__fb{
+  padding: 10px 18px;
+}
+
+.nt-footer__twitter{
+  padding: 10px 14px;
+}
+
+.nt-footer__google{
+  padding: 10px 12px;
 }
