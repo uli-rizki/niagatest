@@ -1,0 +1,32 @@
+{
+  "data" : [
+    {
+      "name" : "Bayi",
+      "priceOld" : "19900",
+      "price" : "14900",
+      "registeredUsers" : "198",
+      "features" : "<ul><li><strong>0.5X RESOURCE POWER</strong></li><li><strong>500 MB</strong> Disk Space</li><li><strong>Unlimited</strong> Bandwidth</li><li><strong>Unlimited</strong> Database</li><li><strong>1</strong> Domain</li><li><strong>Instan</strong> Backup</li><li><strong>Unlimited SSL</strong> Gratis Selamanya</li></ul>"
+    },
+    {
+      "name" : "Pelajar",
+      "priceOld" : "46900",
+      "price" : "23450",
+      "registeredUsers" : "4168",
+      "features" : "<ul><li><strong>1X RESOURCE POWER</strong></li><li><strong>Unlimited</strong> Disk Space</li><li><strong>Unlimited</strong> Bandwidth</li><li><strong>Unlimited</strong> POP3 Email</li><li><strong>Unlimited</strong> Databases</li><li><strong>10</strong> Addon Domains</li><li><strong>Instan</strong> Backup</li><li><strong>Domain Gratis</strong> Selamanya</li><li><strong>Unlimited SSL</strong> Gratis Selamanya</li></ul>"
+    },
+    {
+      "name" : "Personal",
+      "priceOld" : "58900",
+      "price" : "38900",
+      "registeredUsers" : "10017",
+      "features" : "<ul><li><strong>2X RESOURCE POWER</strong></li><li><strong>Unlimited</strong> Disk Space</li><li><strong>Unlimited</strong> Bandwidth</li><li><strong>Unlimited</strong> POP3 Email</li><li><strong>Unlimited</strong> Databases</li><li><strong>Unlimited</strong> Addon Domains</li><li><strong>Instan</strong> Backup</li><li><strong>Domain Gratis</strong> Selamanya</li><li><strong>Unlimited SSL</strong> Gratis Selamanya</li><li><strong>Private</strong> Name Server</li><li><strong>SpamAssasin</strong> Mail Protection</li></ul>"
+    },
+    {
+      "name" : "Bisnis",
+      "priceOld" : "109900",
+      "price" : "65900",
+      "registeredUsers" : "3552",
+      "features" : "<ul><li><strong>3X RESOURCE POWER</strong></li><li><strong>Unlimited</strong> Disk Space</li><li><strong>Unlimited</strong> Bandwidth</li><li><strong>Unlimited</strong> POP3 Email</li><li><strong>Unlimited</strong> Databases</li><li><strong>Unlimited</strong> Addon Domains</li><li><strong>Magic Auto</strong> Backup & Restore</li><li><strong>Domain Gratis</strong> Selamanya</li><li><strong>Unlimited SSL</strong> Gratis Selamanya</li><li><strong>Private</strong> Name Server</li><li><strong>Private</strong> Layanan Support</li><li><strong>SpamExpert</strong> Pro Mail Protection</li></ul>"
+    }
+  ]
+}

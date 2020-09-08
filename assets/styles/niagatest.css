@@ -14,33 +14,8 @@
 }
 
 @font-face {
-  font-family: robotto-regular;
-  src: url(fonts/roboto/Roboto-Regular.ttf);
-}
-
-@font-face {
-  font-family: robotto-thin;
-  src: url(fonts/roboto/Roboto-Thin.ttf);
-}
-
-@font-face {
   font-family: robotto-light;
   src: url(fonts/roboto/Roboto-Light.ttf);
-}
-
-@font-face {
-  font-family: nunito-sans;
-  src: url(fonts/nunito_sans/NunitoSans-Regular.ttf);
-}
-
-@font-face {
-  font-family: nunito-sans-bold;
-  src: url(fonts/nunito_sans/NunitoSans-Bold.ttf);
-}
-
-@font-face {
-  font-family: nunito-sans-light;
-  src: url(fonts/nunito_sans/NunitoSans-Light.ttf);
 }
 
 body {
@@ -87,7 +62,10 @@ a, a:hover{
 .php-hosting__title,
 .hosting-package__title,
 .hosting-features__card-title,
-.ft--strong{
+.ft--strong,
+.hosting-package__title,
+.hosting-package__feature ul li strong,
+.price{
   font-family: montserrat-bold, sans-serif;
 }
 
@@ -125,6 +103,42 @@ a, a:hover{
   color: #28a745;
   padding-right: .5rem;
   font-size: 18px;
+}
+
+.hosting-package__card:hover{
+  border-color: #007aff;
+}
+
+.hosting-package__card:hover > .card-header{
+  background-color: #007aff !important;
+  color: #FFF;
+}
+
+.hosting-package__card:hover > .card-header > .hosting-package__users{
+  background: #0063cc;
+}
+
+.hosting-package__card:hover > .card-body > .hosting-package__btn{
+  border-color: #007aff !important;
+  background-color: #007aff !important;
+  color: #FFF;
+}
+
+.hosting-package__feature ul{
+  list-style: none;
+  font-size: 14px;
+  line-height: 2;
+  text-align: center;
+  padding-left: 0;
+}
+
+.price{
+  font-size: 18px;
+}
+
+.price--strong{
+  font-size: 40px !important;
+  vertical-align: middle;
 }
 
 .php-limit__list{
@@ -257,6 +271,11 @@ a, a:hover{
   border-radius: 1.5rem !important;
 }
 
+.btn--pill{
+  border-width: 2px;
+  border-radius: 1.25rem !important;
+}
+
 .nt-footer{
   background-color: #333;
   padding: 100px 5% 24px;
@@ -343,4 +362,23 @@ a, a:hover{
 
 .nt-footer__google{
   padding: 10px 12px;
+}
+
+.nt-footer__payment-list{
+  list-style: none;
+  padding-left: 0;
+}
+
+.price--strike{
+  text-decoration: line-through;
+  font-size: 16px;
+}
+
+.nt-footer__payment{
+  -webkit-filter: brightness(0) invert(.8);
+  -webkit-transition: all .3s;
+  border: 1px solid #FFF;
+  border-radius: .5rem;
+  padding: .5rem;
+  height: 40px;
 }

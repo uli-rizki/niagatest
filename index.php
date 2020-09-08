@@ -1,3 +1,37 @@
+<?php 
+$feature = file_get_contents('data/packages.json');
+$packages = json_decode($feature);
+$data = $packages->data;
+
+function _thousand_($data) {
+  $thousand = "";
+  $jml = strlen($data);
+  while($jml > 3) {
+    $thousand = "." . substr($data,-3) . $thousand;
+    $l = strlen($data) - 3;
+    $data = substr($data,0,$l);
+    $jml = strlen($data);
+  }
+  $thousand = $data.$thousand;
+  return $thousand;
+}
+
+function _rupiah_($data, $custom=false) {
+  $rupiah = "";
+  $jml = strlen($data);
+  while($jml > 3) {
+    $rupiah = "." . substr($data,-3) . $rupiah;
+    $l = strlen($data) - 3;
+    $data = substr($data,0,$l);
+    $jml = strlen($data);
+  }
+
+  $rupiah = $custom ? "Rp <span class='price--strong'>".$data."</span>".$rupiah : "Rp " . $data . $rupiah;
+  return $rupiah;
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -94,8 +128,33 @@
         <div class="row">
           <div class="col-md-12">
             <h2 class="hosting-package__title text-center">Paket Hosting Singapura yang Tepat</h2>
-            <h3 class="hosting-package__subtitle text-center">Diskon 40% + Domain dan SSL Gratis untuk Anda</h3>
+            <h3 class="hosting-package__subtitle text-center mb-3">Diskon 40% + Domain dan SSL Gratis untuk Anda</h3>
           </div>
+          <?php foreach($data as $row => $val): ?>
+          <div class="col-md-3 px-md-0 mb-3">
+            <div class="hosting-package__card card text-center">
+              <div class="card-header px-0 pt-2 pb-0 bg-white">
+                <h5 class="hosting-package__title mb-0"><?php echo $val->name; ?></h5>
+                <hr />
+                <div class="hosting-package__price">
+                  <p class="price--strike m-0"><?php echo _rupiah_($val->priceOld); ?></p>
+                  <p class="price"><?php echo _rupiah_($val->price, true); ?></p>
+                </div>
+                <hr class="m-0" />
+                <div class="hosting-package__users py-2">
+                  <p class="m-0"><strong><?php echo _thousand_($val->registeredUsers); ?></strong> Pengguna Terdaftar</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="hosting-package__feature mt-3">
+                  <?php echo $val->features; ?>
+                </div>
+
+                <button class="hosting-package__btn btn btn--pill btn-outline-dark">Pilih Sekarang</button>
+              </div>
+            </div>
+          </div>
+          <?php endforeach; ?>
         </div>
         </div>
       </section>
@@ -334,7 +393,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 d-flex">
-              <p class="my-auto">Bagikan jika Anda menyukai halaman ini</p>
+              <p class="my-auto mb-3">Bagikan jika Anda menyukai halaman ini</p>
             </div>
             <div class="col-md-6 d-flex">
               <div class="share__social-media d-flex">
@@ -363,17 +422,19 @@
         </div>
       </section>
       <section class="need-help bg-info text-white py-5">
-        <div class="container d-flex">
-          <h3 class="need-help__title my-auto">Perlu <strong class="ft--strong">BANTUAN ?</strong> Hubungi Kami: <strong class="ft--strong">0274-5305505</strong></h3>
-          <div class="need-help__separate"></div>
-          <button class="btn btn--pill btn-lg btn-outline-light ml-md-auto my-3 px-4"><i class="far fa-lg fa-comment-alt mr-3 ml-2"></i> Live Chat</button>
+        <div class="container">
+          <div class="row">
+            <h3 class="need-help__title my-auto">Perlu <strong class="ft--strong">BANTUAN ?</strong> Hubungi Kami: <strong class="ft--strong">0274-5305505</strong></h3>
+            <div class="need-help__separate d-none d-md-block"></div>
+            <button class="btn btn--pill btn-lg btn-outline-light ml-md-auto my-3 px-4"><i class="far fa-lg fa-comment-alt mr-3 ml-2"></i> Live Chat</button>
+          </div>
         </div>
       </section>
     </div>
     <footer class="nt-footer">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-6 col-md-3">
             <h3 class="nt-footer__title">HUBUNGI KAMI</h3>
             <p class="nt-footer__contact">
               <a href="tel:+62742885822">0274-2885822</a>
@@ -389,7 +450,7 @@
               Yogyakarta 55284
             </p>
           </div>
-          <div class="col-md-3">
+          <div class="col-6 col-md-3">
             <h3 class="nt-footer__title">LAYANAN</h3>
             <ul class="nt-footer__menu-list">
               <li><a class="nt-footer__menu" href="javascript:0;">Domain</a></li>
@@ -402,7 +463,7 @@
               <li><a class="nt-footer__menu" href="javascript:0;">Program Afiliasi</a></li>
             </ul>
           </div>
-          <div class="col-md-3">
+          <div class="col-6 col-md-3">
             <h3 class="nt-footer__title">SERVICE HOSTING</h3>
             <ul class="nt-footer__menu-list">
               <li><a class="nt-footer__menu" href="javascript:0;">Hosting Murah</a></li>
@@ -413,7 +474,7 @@
               <li><a class="nt-footer__menu" href="javascript:0;">Hosting Laravel</a></li>
             </ul>
           </div>
-          <div class="col-md-3">
+          <div class="col-6 col-md-3">
             <h6 class="nt-footer__title">TUTORIAL</h6>
             <ul class="nt-footer__menu-list">
               <li><a class="nt-footer__menu" href="javascript:0;">Knowledgebase</a></li>
@@ -423,7 +484,7 @@
           </div>
         </div>
         <div class="row mt-5">
-          <div class="col-md-3">
+          <div class="col-6 col-md-3">
             <h3 class="nt-footer__title">TENTANG KAMI</h3>
             <ul class="nt-footer__menu-list">
               <li><a class="nt-footer__menu" href="javascript:0;">Tim Niagahoster</a></li>
@@ -433,7 +494,7 @@
               <li><a class="nt-footer__menu" href="javascript:0;">Kontak Kami</a></li>
             </ul>
           </div>
-          <div class="col-md-3">
+          <div class="col-6 col-md-3">
             <h6 class="nt-footer__title">KENAPA PILIH NIAGAHOSTER</h6>
             <ul class="nt-footer__menu-list">
               <li><a class="nt-footer__menu" href="javascript:0;">Support Terbaik</a></li>
@@ -455,7 +516,7 @@
               Dapatkan promo dan konten menarik dari penyedia hosting terbaik anda.
             </p>
           </div>
-          <div class="col-md-3 d-flex mt-4 pt-2">
+          <div class="col-6 col-md-3 d-flex mt-4 pt-2">
             <div class="nt-footer__social-media nt-footer__fb mr-3">
               <i class="fab fa-facebook-f"></i>
             </div>
@@ -470,9 +531,16 @@
         <div class="row mt-5">
           <div class="col-md-12">
             <h3 class="nt-footer__title">PEMBAYARAN</h3>
+            <div class="d-inline-block">
+              <img class="nt-footer__payment mb-3" src="assets/image/banks/bca.svg" alt="Pembayaran bca" />
+              <img class="nt-footer__payment mb-3 ml-2" src="assets/image/banks/mandiri.svg" alt="Pembayaran mandiri" />
+              <img class="nt-footer__payment mb-3 ml-2" src="assets/image/banks/bni.svg" alt="Pembayaran bni" />
+              <img class="nt-footer__payment mb-3 ml-2" src="assets/image/banks/visa.svg" alt="Pembayaran visa" />
+              <img class="nt-footer__payment mb-3 ml-2" src="assets/image/banks/master.svg" alt="Pembayaran mastercard" />
+            </div>
           </div>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-3">
           <div class="col-md-12">
             <p>
               <small>
@@ -489,5 +557,6 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/jquery/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/niagatest.js"></script>
   </body>
 </html>
