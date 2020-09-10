@@ -424,9 +424,9 @@ function _rupiah_($data, $custom=false) {
       <section class="need-help bg-info text-white py-5">
         <div class="container">
           <div class="row">
-            <h3 class="need-help__title my-auto">Perlu <strong class="ft--strong">BANTUAN ?</strong> Hubungi Kami: <strong class="ft--strong">0274-5305505</strong></h3>
+            <h3 class="need-help__title my-auto text-center text-md-left">Perlu <strong class="ft--strong">BANTUAN ?</strong> Hubungi Kami: <strong class="ft--strong">0274-5305505</strong></h3>
             <div class="need-help__separate d-none d-md-block"></div>
-            <button class="btn btn--pill btn-lg btn-outline-light ml-md-auto my-3 px-4"><i class="far fa-lg fa-comment-alt mr-3 ml-2"></i> Live Chat</button>
+            <button class="btn btn--pill btn-lg btn-outline-light mx-auto my-3 px-4"><i class="far fa-lg fa-comment-alt mr-3 ml-2"></i> Live Chat</button>
           </div>
         </div>
       </section>
